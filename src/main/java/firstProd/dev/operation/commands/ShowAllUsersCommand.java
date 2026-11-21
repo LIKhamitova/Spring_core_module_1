@@ -9,20 +9,24 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ShowAllUsers implements OperationCommand {
-    private UserService userService;
+public class ShowAllUsersCommand implements OperationCommand {
+    private final UserService userService;
 
-    public ShowAllUsers(UserService userService) {
+    public ShowAllUsersCommand(UserService userService) {
         this.userService = userService;
     }
 
     @Override
-    public void execute(){
-       List<User> userList =  userService.getUserList();
-       for( User user : userList){
-           System.out.println(user);
-       }
+    public void execute() {
+            List<User> userList = userService.getUserList();
 
+        if (userList.isEmpty()) {
+            System.out.println("No users found");
+        }  else {
+            for (User user : userList) {
+                System.out.println(user);
+            }
+        }
     }
 
     @Override
