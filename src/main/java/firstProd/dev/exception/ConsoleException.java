@@ -1,7 +1,7 @@
 package firstProd.dev.exception;
 
-public class ConsoleErrorsException extends RuntimeException {
-    public ConsoleErrorsException(String message) {
+public class ConsoleException extends RuntimeException {
+    public ConsoleException(String message) {
         super(message);
     }
 }

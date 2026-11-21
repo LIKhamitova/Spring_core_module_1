@@ -1,7 +1,7 @@
 package firstProd.dev.exception;
 
-public class UserCreationException extends RuntimeException {
-    public UserCreationException(String message) {
+public class UserException extends RuntimeException {
+    public UserException(String message) {
         super(message);
     }
 }
